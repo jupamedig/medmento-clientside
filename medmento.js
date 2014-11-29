@@ -13,8 +13,8 @@ function createReminder(){
     url: 'http://medmento.herokuapp.com/api/v1/events',
     dataType: 'json'
   });
-  request.done(function(response){
-    console.log(response)
+  request.done(function(res){
+    console.log(res)
     // $('form').hide();
   });
   request.fail(console.log('fail!'));
@@ -26,9 +26,13 @@ function getReminders(){
     url: 'http://medmento.herokuapp.com/api/v1/events',
     dataType: 'json'
   });
-  request.done(function(response){
-    console.log(response)
+  request.done(function(res){
+    console.log(res)
+    console.log("awesome")
     // $('form').hide();
   });
-  request.fail(console.log('fail!'));
+  request.fail(function(res) {
+    console.log(res)
+    console.log('fail!')
+  });
 };
