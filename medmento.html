@@ -1,0 +1,119 @@
+<!doctype html>
+<html class="no-js" lang="en" data-framework="javascript">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medmento Clientside</title>
+  <link rel="stylesheet" href="medmento.css">
+  <link rel="stylesheet" href="foundation.css" />
+  <link rel="stylesheet" href="foundation.min.css" />
+</head>
+
+<body>
+  <nav class="top-bar">
+     <ul class="title-area">
+        <li class="name">
+              <h1><a href="#">Medmento</a></h1>
+        </li>
+     </ul>
+  </nav>
+
+  <div class="row">
+    <h3>Set Reminder</h3>
+    <form action="http://medmento.herokuapp.com/api/v1/events" method="post">
+      <fieldset>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Patient Name
+              <input id='name' name='name' type="text" placeholder="please enter the patient's name" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Patient Phone Number
+              <input id="phone-number" name="phone-number" type="tel" placeholder="what phone number should be called?" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <label>Start Date
+              <input id="start-date" name="start-date" type="date" placeholder="please pick a date from the dropdown" />
+            </label>
+          </div>
+        </div>
+        <div class="large-4 columns">
+          <label>End Date
+            <input id="end-date" name="end-date" type="date" placeholder="please pick a date from the dropdown" />
+          </label>
+        </div>
+        <div class="large-4 columns">
+          <label>Time
+            <input type="time" placeholder="when should the reminder be sent out?" />
+          </label>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Days to take medicine</label>
+            <input id="Sunday" type="checkbox">
+            <label for="Sunday">Sunday</label>
+            <input id="Monday" type="checkbox">
+            <label for="Monday">Monday</label>
+            <input id="Tuesday" type="checkbox">
+            <label for="Tuesday">Tuesday</label>
+            <input id="Wednesday" type="checkbox">
+            <label for="Wednesday">Wednesday</label>
+            <input id="Thursday" type="checkbox">
+            <label for="Thursday">Thursday</label>
+            <input id="Friday" type="checkbox">
+            <label for="Friday">Friday</label>
+            <input id="Saturday" type="checkbox">
+            <label for="Saturday">Saturday</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>
+              <select>
+                <option value="weekly">Weekly</option>
+                <option value="biweekly">Every Two Weeks</option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Medication
+              <input type="text" placeholder="please enter the medication that should be taken" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Message
+              <textarea placeholder="what message do you want to send?"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <input id="save-button" class="button round right" type='submit' value='Save'>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+
+  <a id='testing' href="#">TESTING</a>
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+  <script src="medmento.js"></script>
+</body>
+</html>
