@@ -12,7 +12,7 @@ function createReminder(evt){
   // var dataToSend = {}
   var request = $.ajax({
     type: 'post',
-    url: 'http://medmento.herokuapp.com/api/v1/events',
+    url: 'http://localhost:3000/api/v1/events',
     dataType: 'json',
     data: $(this).serialize()
   });
@@ -20,25 +20,23 @@ function createReminder(evt){
     console.log(res)
     // $('form').hide();
   });
-  request.fail(function(res) {
-    console.log('create reminder fail!')
-});
+  request.fail(console.log('fail!'));
 };
 
 function getReminders(evt){
   evt.preventDefault();
   var request = $.ajax({
     type: 'get',
-    url: 'http://medmento.herokuapp.com/api/v1/events',
+    url: 'localhost:3000/api/v1/events',
     dataType: 'json'
   });
   request.done(function(res){
-    console.log("awesome 1")
     console.log(res)
-    console.log("awesome 2")
+    console.log("awesome")
     // $('form').hide();
   });
   request.fail(function(res) {
-    console.log('get reminders fail!')
+    console.log(res)
+    console.log('fail!')
   });
 };
