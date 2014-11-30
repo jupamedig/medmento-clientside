@@ -5,9 +5,9 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medmento Clientside</title>
-  <link rel="stylesheet" href="medmento.css">
-  <link rel="stylesheet" href="foundation.css" />
-  <link rel="stylesheet" href="foundation.min.css" />
+  <link rel="stylesheet" href="css/medmento.css">
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/foundation.min.css" />
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 
   <div class="row">
     <h3>Set Reminder</h3>
-    <form action="http://medmento.herokuapp.com/api/v1/events" method="post">
+    <form id="reminder-form">
       <fieldset>
         <div class="row">
           <div class="large-12 columns">
@@ -33,45 +33,38 @@
         <div class="row">
           <div class="large-12 columns">
             <label>Patient Phone Number
-              <input id="phone-number" name="phone-number" type="tel" placeholder="what phone number should be called?" />
+              <input id="patient-number" name="patient_number" type="tel" placeholder="what phone number should be called?" />
             </label>
           </div>
         </div>
         <div class="row">
           <div class="large-4 columns">
             <label>Start Date
-              <input id="start-date" name="start-date" type="date" placeholder="please pick a date from the dropdown" />
+              <input id="start-date" name="start_date" type="date" placeholder="please pick a date from the dropdown" />
             </label>
           </div>
         </div>
         <div class="large-4 columns">
           <label>End Date
-            <input id="end-date" name="end-date" type="date" placeholder="please pick a date from the dropdown" />
+            <input id="end-date" name="end_date" type="date" placeholder="please pick a date from the dropdown" />
           </label>
         </div>
-        <div class="large-4 columns">
+        <!-- <div class="large-4 columns">
           <label>Time
-            <input type="time" placeholder="when should the reminder be sent out?" />
+            <input type="time" name="" placeholder="when should the reminder be sent out?" />
           </label>
         </div>
 
         <div class="row">
           <div class="large-12 columns">
             <label>Days to take medicine</label>
-            <input id="Sunday" type="checkbox">
-            <label for="Sunday">Sunday</label>
-            <input id="Monday" type="checkbox">
-            <label for="Monday">Monday</label>
-            <input id="Tuesday" type="checkbox">
-            <label for="Tuesday">Tuesday</label>
-            <input id="Wednesday" type="checkbox">
-            <label for="Wednesday">Wednesday</label>
-            <input id="Thursday" type="checkbox">
-            <label for="Thursday">Thursday</label>
-            <input id="Friday" type="checkbox">
-            <label for="Friday">Friday</label>
-            <input id="Saturday" type="checkbox">
-            <label for="Saturday">Saturday</label>
+            <input id="Sunday" type="checkbox"><label for="Sunday">Sunday</label>
+            <input id="Monday" type="checkbox"><label for="Sunday">Monday</label>
+            <input id="Tuesday" type="checkbox"><label for="Sunday">Tuesday</label>
+            <input id="Wednesday" type="checkbox"><label for="Sunday">Wednesday</label>
+            <input id="Thursday" type="checkbox"><label for="Sunday">Thursday</label>
+            <input id="Friday" type="checkbox"><label for="Sunday">Friday</label>
+            <input id="Saturday" type="checkbox"><label for="Sunday">Saturday</label>
           </div>
         </div>
 
@@ -85,18 +78,18 @@
             </label>
           </div>
         </div>
-
+ -->
         <div class="row">
           <div class="large-12 columns">
             <label>Medication
-              <input type="text" placeholder="please enter the medication that should be taken" />
+              <input type="text" name="drug_name" placeholder="please enter the medication that should be taken" />
             </label>
           </div>
         </div>
         <div class="row">
           <div class="large-12 columns">
             <label>Message
-              <textarea placeholder="what message do you want to send?"></textarea>
+              <textarea name="message" placeholder="what message do you want to send?"></textarea>
             </label>
           </div>
         </div>
