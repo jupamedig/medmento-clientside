@@ -1,0 +1,267 @@
+<!doctype html>
+<html class="no-js" lang="en" data-framework="javascript">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Medmento Clientside</title>
+  <link rel="stylesheet" href="css/foundation.css" />
+  <link rel="stylesheet" href="css/foundation.min.css" />
+  <link rel="stylesheet" href="css/medmento.css">
+
+  <script src="js/modernizr.js"></script>
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="js/fastclick.js"></script>
+
+  <script src="js/foundation.min.js"></script>
+  <script src="js/foundation.reveal.js"></script>
+
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/underscore.js/1.7.0/underscore.js"></script>
+  <script src="http://cdnjs.cloudflare.com/ajax/libs/backbone.js/1.1.2/backbone.js"></script>
+  <script src="js/medmento.js"></script>
+</head>
+
+<body>
+
+  <!-- nav bar -->
+  <nav class="top-bar">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a href="#">Medmento</a></h1>
+      </li>
+    </ul>
+    <section class="top-bar-section">
+      <!-- Right Nav Section -->
+      <ul class="right">
+        <li><a id="nav-logout" href="#">LOGOUT</a></li>
+      </ul>
+    </section>
+
+  </nav>
+
+<!-- form modals -->
+
+  <div id="formModal" class="reveal-modal" data-reveal>
+    <div class="row">
+      <h3 class="modal-header">Set Reminder</h3>
+      <form id="reminder-form">
+        <fieldset>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Patient Name
+                <input id='name' name='name' type="text" placeholder="please enter the patient's name" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Patient Phone Number
+                <input id="patient-number" name="patient_number" type="tel" placeholder="what phone number should be called?" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-4 columns">
+              <label>Time
+                <input type="time" name="" placeholder="when should the reminder be sent out?" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Days to take medicine</label>
+              <input id="Sunday" type="checkbox"><label for="Sunday">Sunday</label>
+              <input id="Monday" type="checkbox"><label for="Sunday">Monday</label>
+              <input id="Tuesday" type="checkbox"><label for="Sunday">Tuesday</label>
+              <input id="Wednesday" type="checkbox"><label for="Sunday">Wednesday</label>
+              <input id="Thursday" type="checkbox"><label for="Sunday">Thursday</label>
+              <input id="Friday" type="checkbox"><label for="Sunday">Friday</label>
+              <input id="Saturday" type="checkbox"><label for="Sunday">Saturday</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Medication
+                <input type="text" name="drug_name" placeholder="please enter the medication that should be taken" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Message
+                <textarea name="message" placeholder="what message do you want to send?"></textarea>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <input id="save-button" class="button right" type='submit' value='Save'>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+
+  <div id="reminderModal" class="reveal-modal" data-reveal>
+    <div class="row">
+      <h3 class="modal-header">Reminder Info</h3>
+      <form id="reminder-form">
+        <fieldset>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Patient Name
+                <input id='name' name='name' type="text" value="Grampa" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Patient Phone Number
+                <input id="patient-number" name="patient_number" type="tel" value="555-555-5555" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-4 columns">
+              <label>Time
+                <input type="time" name="" value="18:00:00" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Days to take medicine</label>
+              <input id="Sunday" type="checkbox"><label for="Sunday">Sunday</label>
+              <input id="Monday" type="checkbox" checked><label for="Monday">Monday</label>
+              <input id="Tuesday" type="checkbox"><label for="Tuesday">Tuesday</label>
+              <input id="Wednesday" type="checkbox" checked><label for="Wednesday">Wednesday</label>
+              <input id="Thursday" type="checkbox"><label for="Thursday">Thursday</label>
+              <input id="Friday" type="checkbox" checked><label for="Friday">Friday</label>
+              <input id="Saturday" type="checkbox"><label for="Saturday">Saturday</label>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Medication
+                <input type="text" name="drug_name" value="Xyafroman" />
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <label>Message
+                <textarea name="message">Yo gramps, make sure to take your Xyafroman right now! Love, your grandson, Leroy.</textarea>
+              </label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="large-12 columns">
+              <input id="save-button" class="button right" type='submit' value='Save'>
+              <input id="delete-button" class="button right" type='submit' value='Delete'>
+            </div>
+          </div>
+        </fieldset>
+      </form>
+    </div>
+    <a class="close-reveal-modal">&#215;</a>
+  </div>
+
+
+<!-- main reminders page -->
+
+  <div class='row main-section'>
+    <div class='large-12 columns'>
+
+      <div class='reminder-container'>
+
+        <div class='row'>
+          <div class='large-10 small-centered columns'>
+              <a href="#" data-reveal-id="formModal" class="button radius">Set Reminder</a>
+          </div>
+        </div>
+
+        <div class='row'>
+          <div class='large-10 small-centered columns'>
+            <div class='large-4 columns'><strong>Patient</strong></div>
+            <div class='large-4 columns'><strong>Medicine</strong></div>
+            <div class='large-4 columns'><strong>Days</strong></div>
+          </div>
+        </div>
+
+        <a href='#' data-reveal-id="reminderModal">
+          <div class='row'>
+            <div class='large-10 small-centered columns'>
+              <div class='large-4 columns even'>Gramps</div>
+              <div class='large-4 columns even'>Xyafroman</div>
+              <div class='large-4 columns even'>M / W / F</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" data-reveal-id="reminderModal">
+          <div class='row'>
+            <div class='large-10 small-centered columns'>
+              <div class='large-4 columns odd'>Aunt Gina</div>
+              <div class='large-4 columns odd'>Laquishadex</div>
+              <div class='large-4 columns odd'>T / Th</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" data-reveal-id="reminderModal">
+          <div class='row'>
+            <div class='large-10 small-centered columns'>
+              <div class='large-4 columns even'>Maw Maw</div>
+              <div class='large-4 columns even'>Fitzloriban</div>
+              <div class='large-4 columns even'>M / W</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" data-reveal-id="reminderModal">
+          <div class='row'>
+            <div class='large-10 small-centered columns'>
+              <div class='large-4 columns odd'>Aunt Gina</div>
+              <div class='large-4 columns odd'>Pylorifil</div>
+              <div class='large-4 columns odd'>Th / Su</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" data-reveal-id="reminderModal">
+          <div class='row'>
+            <div class='large-10 small-centered columns'>
+              <div class='large-4 columns even'>Gramps</div>
+              <div class='large-4 columns even'>Mawinazine</div>
+              <div class='large-4 columns even'>M / W / F</div>
+            </div>
+          </div>
+        </a>
+
+        <a href="#" data-reveal-id="reminderModal">
+          <div class='row'>
+            <div class='large-10 small-centered columns'>
+              <div class='large-4 columns odd'>Sparky</div>
+              <div class='large-4 columns odd'>Soanzipan</div>
+              <div class='large-4 columns odd'>T / Th</div>
+            </div>
+          </div>
+        </a>
+
+      </div>
+
+    </div>
+  </div>
+
+
+
+  <script>
+    $(document).foundation();
+  </script>
+</body>
+</html>
