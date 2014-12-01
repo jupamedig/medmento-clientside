@@ -33,10 +33,7 @@ function getReminders(evt){
     dataType: 'json'
   });
   request.done(function(res){
-    console.log("awesome 1")
     console.log(res)
-    console.log("awesome 2")
-    // $('form').hide();
   });
   request.fail(function(res) {
     console.log('get reminders fail!')
