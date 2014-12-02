@@ -50,7 +50,7 @@
           <div class="row">
             <div class="large-12 columns">
               <label>Patient Name
-                <input id='name' name='name' type="text" placeholder="please enter the patient's name" />
+                <input id='patient-name' name='patient_name' type="text" placeholder="please enter the patient's name" />
               </label>
             </div>
           </div>
@@ -64,20 +64,20 @@
           <div class="row">
             <div class="large-4 columns">
               <label>Time
-                <input type="time" name="" placeholder="when should the reminder be sent out?" />
+                <input type="time" name="time" placeholder="when should the reminder be sent out?" />
               </label>
             </div>
           </div>
           <div class="row">
             <div class="large-12 columns">
               <label>Days to take medicine</label>
-              <input id="Sunday" type="checkbox"><label for="Sunday">Sunday</label>
-              <input id="Monday" type="checkbox"><label for="Sunday">Monday</label>
-              <input id="Tuesday" type="checkbox"><label for="Sunday">Tuesday</label>
-              <input id="Wednesday" type="checkbox"><label for="Sunday">Wednesday</label>
-              <input id="Thursday" type="checkbox"><label for="Sunday">Thursday</label>
-              <input id="Friday" type="checkbox"><label for="Sunday">Friday</label>
-              <input id="Saturday" type="checkbox"><label for="Sunday">Saturday</label>
+              <input name="weekdays[]" value="Sunday" type="checkbox"><label>Sunday</label>
+              <input name="weekdays[]" value="Monday" type="checkbox"><label>Monday</label>
+              <input name="weekdays[]" value="Tuesday" type="checkbox"><label>Tuesday</label>
+              <input name="weekdays[]" value="Wednesday" type="checkbox"><label>Wednesday</label>
+              <input name="weekdays[]" value="Thursday" type="checkbox"><label>Thursday</label>
+              <input name="weekdays[]" value="Friday" type="checkbox"><label>Friday</label>
+              <input name="weekdays[]" value="Saturday" type="checkbox"><label>Saturday</label>
             </div>
           </div>
 
@@ -129,20 +129,20 @@
           <div class="row">
             <div class="large-4 columns">
               <label>Time
-                <input type="time" name="" value="18:00:00" />
+                <input type="time" name="time" value="18:00:00" />
               </label>
             </div>
           </div>
           <div class="row">
             <div class="large-12 columns">
               <label>Days to take medicine</label>
-              <input id="Sunday" type="checkbox"><label for="Sunday">Sunday</label>
-              <input id="Monday" type="checkbox" checked><label for="Monday">Monday</label>
-              <input id="Tuesday" type="checkbox"><label for="Tuesday">Tuesday</label>
-              <input id="Wednesday" type="checkbox" checked><label for="Wednesday">Wednesday</label>
-              <input id="Thursday" type="checkbox"><label for="Thursday">Thursday</label>
-              <input id="Friday" type="checkbox" checked><label for="Friday">Friday</label>
-              <input id="Saturday" type="checkbox"><label for="Saturday">Saturday</label>
+              <input name="weekdays[]" value="Sunday" type="checkbox"><label>Sunday</label>
+              <input name="weekdays[]" value="Monday" type="checkbox" checked><label>Monday</label>
+              <input name="weekdays[]" value="Tuesday" type="checkbox"><label>Tuesday</label>
+              <input name="weekdays[]" value="Wednesday" type="checkbox" checked><label>Wednesday</label>
+              <input name="weekdays[]" value="Thursday" type="checkbox"><label>Thursday</label>
+              <input name="weekdays[]" value="Friday" type="checkbox" checked><label>Friday</label>
+              <input name="weekdays[]" value="Saturday" type="checkbox"><label>Saturday</label>
             </div>
           </div>
 
