@@ -57,7 +57,7 @@
           <div class="row">
             <div class="large-12 columns">
               <label>Patient Name
-                <input id='name' name='name' type="text" placeholder="please enter the patient's name" />
+                <input id='patient-name' name='patient_name' type="text" placeholder="please enter the patient's name" />
               </label>
             </div>
           </div>
@@ -69,32 +69,36 @@
             </div>
           </div>
           <div class="row">
-            <div class="large-4 columns">
-              <label>Time
-                <input type="time" name="" placeholder="when should the reminder be sent out?" />
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Days to take medicine</label>
-              <input id="Sunday" type="checkbox"><label for="Sunday">Sunday</label>
-              <input id="Monday" type="checkbox"><label for="Sunday">Monday</label>
-              <input id="Tuesday" type="checkbox"><label for="Sunday">Tuesday</label>
-              <input id="Wednesday" type="checkbox"><label for="Sunday">Wednesday</label>
-              <input id="Thursday" type="checkbox"><label for="Sunday">Thursday</label>
-              <input id="Friday" type="checkbox"><label for="Sunday">Friday</label>
-              <input id="Saturday" type="checkbox"><label for="Sunday">Saturday</label>
-            </div>
-          </div>
-
-          <div class="row">
             <div class="large-12 columns">
               <label>Medication
                 <input type="text" name="drug_name" placeholder="please enter the medication that should be taken" />
               </label>
             </div>
           </div>
+
+          <div class="row">
+            <div class="large-12 columns left">
+              <label>Frequency</label><br>
+              <div class="large-2 columns left">Send every</div>
+              <div class="large-2 columns left">
+                <select class="1-31" name="frequency_quantity"></select>
+              </div>
+              <div class="large-2 columns left">
+                <select id="frequency-value" name="frequency_period_id">
+                  <option value="1">hours</option>
+                  <option value="2">days</option>
+                  <option value="3">weeks</option>
+                  <option value="4">months</option>
+                </select>
+              </div>
+              <div class="large-2 columns left">starting at</div>
+              <div class="large-3 columns left">
+                <input type="time" name="at">
+              </div>
+              <div class="large-1 columns left">today.</div>
+            </div>
+          </div>
+
           <div class="row">
             <div class="large-12 columns">
               <label>Message
