@@ -1,0 +1,97 @@
+/* john's css */
+
+#home-orbit li img {
+  width: 100%;
+  height: 700px;
+}
+
+.top-bar {
+  background-color: white;
+  padding: 8px;
+}
+
+#top-left-logo {
+ color: #2cb4ac;
+ font-size: 50px;
+ padding-left: 40px;
+ font-family: 'Julius Sans One', sans-serif;
+}
+
+#top-right-nav {
+ color: #2cb4ac;
+ background-color: white;
+ font-size: 20px;
+ font-family: 'Rosario', sans-serif;
+}
+
+body:before {
+  content: "";
+  display: block;
+  position: fixed;
+  left: 0;
+  width: 100%;
+  height: .3rem;
+  z-index: 1000;
+  top: 0;
+  background-image: -webkit-linear-gradient(left,#a3c9dc,#2cb4ac 33%,#599dc0 66%);
+  background-image: -moz-linear-gradient(left,#a3c9dc,#2cb4ac 33%,#599dc0 66%);
+  background-image: -o-linear-gradient(left,#a3c9dc,#2cb4ac 33%,#599dc0 66%);
+  background-image: linear-gradient(left,#a3c9dc,#2cb4ac 33%,#599dc0 66%);
+}
+
+hr {
+  max-width: 90%;
+  margin: auto;
+  margin-bottom: 30px;
+  margin-top: 10px;
+}
+
+#home-sign-in {
+  margin-right: 50px;
+}
+
+#info-header {
+ font-family: 'Rosario', sans-serif;
+  color: #2cb4ac;;
+}
+
+.large-4 i {
+  font-size: 220px;
+  color: #2cb4ac;
+  padding-bottom: 10px;
+}
+
+#main-content {
+  padding-top: 20px;
+}
+
+.name h1 {
+  display: inline-block;
+}
+
+.name i {
+  font-size: 40px;
+  margin-left: 30px;
+  color: #2cb4ac;
+}
+
+footer p {
+  color: grey;
+  text-align: center;
+}
+
+#home-contact {
+  background-color: #2cb4ac;
+}
+
+.button {
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.panel h3 {
+    font-family: 'Rosario', sans-serif;
+}
+
+.panel h4 {
+    font-family: 'Rosario', sans-serif;
+}

@@ -5,16 +5,8 @@
 
 .main-section {
   margin-top: 50px;
-  background-color: #d0d0d0;
+  /*background-color: ;*/
   border-radius: 5px;
-}
-
-.even {
-  background-color: white;
-}
-
-.odd {
-  background-color: #BDE6E4;
 }
 
 a {
@@ -47,3 +39,47 @@ a {
   color: #f25c4d;
   margin-right: 20px;
 }
+
+.big-icon {
+  font-size: 52px;
+}
+
+.top-bar  {
+  background-color: #2cb4ac;
+}
+
+#logout {
+  font-size: 20px;
+  padding-right: 65px;
+  background-color: #2cb4ac;
+  font-family: 'Rosario', sans-serif;
+}
+
+#home-med {
+  font-size: 45px;
+  font-family: 'Julius Sans One', sans-serif;
+  padding-left: 65px;
+}
+
+#med-row {
+  font-size: 30px;
+}
+
+.large-4 {
+  padding: 15px 0;
+}
+
+.large-4 strong {
+  font-size: 45px;
+  font-family: 'Julius Sans One', sans-serif;
+}
+
+.large-4 span {
+  font-size: 30px;
+}
+
+.button {
+  font-family: 'Rosario', sans-serif;
+}
+
+

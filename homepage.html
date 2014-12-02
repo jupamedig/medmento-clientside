@@ -1,0 +1,122 @@
+<!doctype html>
+<html class="no-js" lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MedMento | Welcome</title>
+  <link rel="stylesheet" href="foundation-5.4.7/css/foundation.css" />
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
+  <link rel="stylesheet" type="text/css" href="foundation-5.4.7/css/home-medmento.css">
+  <script src="foundation-5.4.7/js/vendor/modernizr.js"></script>
+</head>
+<body>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <i class="fa fa-plus-square"></i>
+        <h1><a id="top-left-logo" href="#">MedMento</a></h1>
+      </li>
+    </ul>
+
+    <section class="top-bar-section">
+      <ul class="right">
+        <li><a id="top-right-nav" href="#">Get Started</a></li>
+        <li id="home-sign-in"><a id="top-right-nav" href="#">Sign In</a></li>
+      </ul>
+    </section>
+  </nav>
+
+  <div id="home-orbit">
+    <ul class="orbit" data-orbit>
+      <li><img src="foundation-5.4.7/img/1.jpg" alt="slide 1"/></li>
+      <li><img src="foundation-5.4.7/img/2.jpg" alt="slide 2"/></li>
+      <li><img src="foundation-5.4.7/img/4.jpeg" alt="slide 3"/></li>
+    </ul>
+  </div>
+
+  <div class="row" id="main-content">
+    <div class="large-12 columns">
+     <h2 id="info-header">What we can do for you</h2>
+     <h5>Medications you have been prescribed are more likely to be effective if you follow your doctor’s or pharmacist’s instructions on when to take them. Many times we forget to take our medication or worry about a friend or family member forgetting to take their medication.We solve this issue with a simple phone call, reminding patients when it's time take their medication. Rest assured - our team has you and your loved ones covered!</h5>
+   </div>
+ </div>
+ <hr/>
+
+ <div class="row">
+  <div class="large-4 columns">
+    <i class="fa fa-users fa-5x"></i>
+  </div>
+  <div class="large-4 columns">
+    <i class="fa fa-calendar fa-5x"></i>
+  </div>
+  <div class="large-4 columns">
+    <i class="fa fa-phone fa-5x"></i>
+  </div>
+</div>
+
+<div class="row">
+  <div class="large-4 columns">
+   <h3>Step 1</h3>
+   <p>To get up-and-running, create a profile to get started.</p>
+ </div>
+ <div class="large-4 columns">
+   <h3>Step 2</h3>
+   <p>Pick a date and time to schedule your phone call reminder. </p>
+ </div>
+ <div class="large-4 columns">
+  <h3>Step 3</h3>
+  <p>A phone call will be sent to the patient when it's time to take their medication.</p>
+</div>
+</div>
+
+    <hr/>
+
+<div class="row">
+  <div class="large-12 columns">
+    <div class="panel" id="touch">
+      <h3>Get in touch</h3>
+      <div class="row">
+        <div class="large-9 columns">
+          <h4>Comments or suggestions? We'd love to hear from you!</h4>
+        </div>
+        <div class="large-3 columns">
+          <a href="#" class="radius button right" id="home-contact">Contact Us</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="row">
+  <div class="large-12 columns">
+     <hr/>
+    <div class="row">
+      <div class="large-12 columns">
+        <p>&copy; 2014 Dev Bootcamp Final Project | Alberto Villacorta, John Lin, Juan Mendez, Kevin Chen.</p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="foundation-5.4.7/js/vendor/jquery.js"></script>
+<script src="foundation-5.4.7/js/foundation/foundation.js"></script>
+<script src="foundation-5.4.7/js/foundation/foundation.orbit.js"></script>
+<script src="foundation-5.4.7/js/foundation.min.js"></script>
+<script>
+
+$(document).foundation({
+  orbit: {
+    animation: 'slide',
+    timer_speed: 2000,
+    pause_on_hover: true,
+    animation_speed: 500,
+    navigation_arrows: true,
+    bullets: false
+  }
+});
+
+</script>
+</body>
+</html>

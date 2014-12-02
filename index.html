@@ -5,6 +5,8 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Medmento Clientside</title>
+  <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
   <link rel="stylesheet" href="foundation-5.4.7/css/foundation.css" />
   <link rel="stylesheet" href="foundation-5.4.7/css/foundation.min.css" />
   <link rel="stylesheet" href="medmento.css">
@@ -23,21 +25,26 @@
 
 <body>
 
-  <!-- nav bar -->
-  <nav class="top-bar">
-    <ul class="title-area">
-      <li class="name">
-        <h1><a href="#">Medmento</a></h1>
-      </li>
-    </ul>
-    <section class="top-bar-section">
-      <!-- Right Nav Section -->
-      <ul class="right">
-        <li><a id="nav-logout" href="#">LOGOUT</a></li>
-      </ul>
-    </section>
 
-  </nav>
+
+<nav class="top-bar" data-topbar role="navigation">
+  <ul class="title-area">
+    <li class="name">
+      <h1><a id="home-med" href="#">Medmento</a></h1>
+    </li>
+     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
+  </ul>
+
+  <section class="top-bar-section">
+
+    <ul class="right">
+      <li class="active"><a id="logout" href="#">LOGOUT</a></li>
+    </ul>
+
+  </section>
+</nav>
+
 
 
 <!-- form modals -->
@@ -177,17 +184,13 @@
 
   <div class='row main-section'>
     <div class='large-12 columns'>
-
       <div class='reminder-container'>
 
-        <div class='row'>
-          <div class='large-10 small-centered columns'>
-              <a href="#" data-reveal-id="formModal" class="button radius">Set Reminder</a>
-          </div>
-        </div>
+        <hr />
 
         <div class='row'>
-          <div class='large-10 small-centered columns'>
+         <a href="#" data-reveal-id="formModal" class="button radius">Set Reminder</a>
+          <div class='large-10 small-centered columns' id="med-row">
             <div class='large-4 columns'><strong>Patient</strong></div>
             <div class='large-4 columns'><strong>Medicine</strong></div>
             <div class='large-4 columns'><strong>Days</strong></div>
@@ -197,65 +200,74 @@
         <a href='#' data-reveal-id="reminderModal">
           <div class='row'>
             <div class='large-10 small-centered columns'>
-              <div class='large-4 columns even'>Gramps</div>
-              <div class='large-4 columns even'>Xyafroman</div>
-              <div class='large-4 columns even'>M / W / F</div>
+              <div class='large-4 columns even'><span>Gramps</span></div>
+              <div class='large-4 columns even'><span>Xyafroman</span></div>
+              <div class='large-4 columns even'><span>M / W / F</span></div>
             </div>
           </div>
         </a>
 
-        <a href="#" data-reveal-id="reminderModal">
+        <a href='#' data-reveal-id="reminderModal">
           <div class='row'>
             <div class='large-10 small-centered columns'>
-              <div class='large-4 columns odd'>Aunt Gina</div>
-              <div class='large-4 columns odd'>Laquishadex</div>
-              <div class='large-4 columns odd'>T / Th</div>
+              <div class='large-4 columns even'><span>Gramps</span></div>
+              <div class='large-4 columns even'><span>Xyafroman</span></div>
+              <div class='large-4 columns even'><span>M / W / F</span></div>
             </div>
           </div>
         </a>
 
-        <a href="#" data-reveal-id="reminderModal">
+        <a href='#' data-reveal-id="reminderModal">
           <div class='row'>
             <div class='large-10 small-centered columns'>
-              <div class='large-4 columns even'>Maw Maw</div>
-              <div class='large-4 columns even'>Fitzloriban</div>
-              <div class='large-4 columns even'>M / W</div>
+              <div class='large-4 columns even'><span>Gramps</span></div>
+              <div class='large-4 columns even'><span>Xyafroman</span></div>
+              <div class='large-4 columns even'><span>M / W / F</span></div>
             </div>
           </div>
         </a>
 
-        <a href="#" data-reveal-id="reminderModal">
+        <a href='#' data-reveal-id="reminderModal">
           <div class='row'>
             <div class='large-10 small-centered columns'>
-              <div class='large-4 columns odd'>Aunt Gina</div>
-              <div class='large-4 columns odd'>Pylorifil</div>
-              <div class='large-4 columns odd'>Th / Su</div>
+              <div class='large-4 columns even'><span>Gramps</span></div>
+              <div class='large-4 columns even'><span>Xyafroman</span></div>
+              <div class='large-4 columns even'><span>M / W / F</span></div>
             </div>
           </div>
         </a>
 
-        <a href="#" data-reveal-id="reminderModal">
+        <a href='#' data-reveal-id="reminderModal">
           <div class='row'>
             <div class='large-10 small-centered columns'>
-              <div class='large-4 columns even'>Gramps</div>
-              <div class='large-4 columns even'>Mawinazine</div>
-              <div class='large-4 columns even'>M / W / F</div>
+              <div class='large-4 columns even'><span>Gramps</span></div>
+              <div class='large-4 columns even'><span>Xyafroman</span></div>
+              <div class='large-4 columns even'><span>M / W / F</span></div>
             </div>
           </div>
         </a>
 
-        <a href="#" data-reveal-id="reminderModal">
+        <a href='#' data-reveal-id="reminderModal">
           <div class='row'>
             <div class='large-10 small-centered columns'>
-              <div class='large-4 columns odd'>Sparky</div>
-              <div class='large-4 columns odd'>Soanzipan</div>
-              <div class='large-4 columns odd'>T / Th</div>
+              <div class='large-4 columns even'><span>Gramps</span></div>
+              <div class='large-4 columns even'><span>Xyafroman</span></div>
+              <div class='large-4 columns even'><span>M / W / F</span></div>
+            </div>
+          </div>
+        </a>
+
+        <a href='#' data-reveal-id="reminderModal">
+          <div class='row'>
+            <div class='large-10 small-centered columns'>
+              <div class='large-4 columns even'><span>Gramps</span></div>
+              <div class='large-4 columns even'><span>Xyafroman</span></div>
+              <div class='large-4 columns even'><span>M / W / F</span></div>
             </div>
           </div>
         </a>
 
       </div>
-
     </div>
   </div>
 
