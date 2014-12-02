@@ -1,9 +1,5 @@
 $(document).ready(function(){
   bindListeners();
-
-  // (function(){
-  //   parseInt($(".frequency-period").val());
-  // });
 });
 
 function bindListeners(){
@@ -13,25 +9,24 @@ function bindListeners(){
 
 function createReminder(evt){
   evt.preventDefault();
-  // var dataToSend = {}
-  // var frequency_period = parseInt($("#frequency-value").val());
-  var frequency_period = 5;
-  var patient_name = $("#patient-name").val();
-  var patient_number = $("#patient-number").val();
+  // var frequency_period_id = parseInt($("#frequency-value").val());
+  // var patient_name = $("#patient-name").val();
+  // var frequency_quantity = $("#frequency_quantity").val();
+  // var patient_number = $("#patient-number").val();
+  // var drug_name = $("#drug_name").val();
+  // var time = $("#time").val();
+  // var message = $("#message").val();
+  // var dataToSend = {frequency_period_id: frequency_period_id, frequency_quantity: frequency_quantity, patient_name: patient_name, patient_number: patient_number, drug_name: drug_name, time: time, message: message}
+
   var request = $.ajax({
     type: 'post',
     url: 'http://medmento.herokuapp.com/api/v1/events',
     dataType: 'json',
-    // data: $(this).serialize()
-    data: {
-      patient_name: patient_name,
-      patient_number: patient_number,
-      frequency_period_id: frequency_period
-    }
+    data: $(this).serialize()
   });
-  request.done(function(res){
-    console.log(res)
-    // $('form').hide();
+  request.done(function(serverData){
+    console.log("DONE!!!!")
+    console.log(serverData)
   });
   request.fail(function(res) {
     console.log('create reminder fail!')
