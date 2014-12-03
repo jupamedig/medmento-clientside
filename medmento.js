@@ -1,4 +1,6 @@
 $(document).ready(function() {
+  $('#weekly-dropdown').hide();
+
   bindListeners();
 });
 
@@ -7,7 +9,12 @@ function bindListeners() {
   $("#reminder-form").on('submit', createReminder);
   $("#testing").on('click', getReminders);
   $(document).on('click', ".delete-event", deleteEvent);
-  dropDown();
+  $('#weekly').on('click', function(){
+    $('#weekly-dropdown').fadeIn('slow');
+  });
+  $('#daily').on('click', function(){
+    $('#weekly-dropdown').hide('slow');
+  });
 };
 
 function deleteEvent(evt) {
@@ -63,6 +70,8 @@ function createReminder(evt) {
     $("#at").val(day + " " + time)
   }
 
+ $('#formModal').foundation('reveal','close');
+
   var request = $.ajax({
     type: 'POST',
     url: 'http://localhost:3000/api/v1/clockwork_events',
@@ -96,12 +105,3 @@ function getReminders(evt) {
   });
 };
 
-function dropDown() {
-  $('#weekly-dropdown').hide();
-  $('#weekly').on('click', function(){
-    $('#weekly-dropdown').fadeIn('slow');
-  });
-  $('#daily').on('click', function(){
-   $('#weekly-dropdown').hide('slow');
- });
-}
