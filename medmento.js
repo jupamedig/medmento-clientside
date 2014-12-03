@@ -22,6 +22,7 @@ function deleteEvent(evt) {
     });
 
 
+
     itemToRemove.remove();
 
   }).fail(function(){alert("Item Not Found!")});
