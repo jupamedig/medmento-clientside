@@ -148,6 +148,10 @@ i {
   margin-right: 2.3em;
 }
 
-#message {
-  font-size: 20px;
+#message p {
+  font-size: 23px;
+}
+
+#delete p {
+  font-size: .8em
 }
