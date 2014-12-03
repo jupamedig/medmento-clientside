@@ -7,6 +7,8 @@
   <title>Medmento Clientside</title>
   <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
+    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
   <link rel="stylesheet" href="foundation-5.4.7/css/foundation.css" />
   <link rel="stylesheet" href="foundation-5.4.7/css/foundation.min.css" />
   <link rel="stylesheet" href="medmento.css">
@@ -25,27 +27,27 @@
 
 <body>
 
-<nav class="top-bar" data-topbar role="navigation">
-  <ul class="title-area">
-    <li class="name">
-      <h1><a id="home-med" href="#">Medmento</a></h1>
-    </li>
-     <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
-    <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
-  </ul>
-
-  <section class="top-bar-section">
-
-    <ul class="right">
-      <li class="active"><a id="logout" href="#">LOGOUT</a></li>
+  <nav class="top-bar" data-topbar role="navigation">
+    <ul class="title-area">
+      <li class="name">
+        <h1><a id="home-med" href="#">Medmento</a></h1>
+      </li>
+      <!-- Remove the class "menu-icon" to get rid of menu icon. Take out "Menu" to just have icon alone -->
+      <li class="toggle-topbar menu-icon"><a href="#"><span>Menu</span></a></li>
     </ul>
 
-  </section>
-</nav>
+    <section class="top-bar-section">
+
+      <ul class="right">
+        <li class="active"><a id="logout" href="#">LOGOUT</a></li>
+      </ul>
+
+    </section>
+  </nav>
 
 
 
-<!-- form modals -->
+  <!-- form modals -->
 
   <div id="formModal" class="reveal-modal" data-reveal>
     <div class="row">
@@ -181,43 +183,50 @@
     <a class="close-reveal-modal">&#215;</a>
   </div>
 
+  <!-- main reminders page -->
 
-<!-- main reminders page -->
-
-  <div class='row main-section'>
-    <div class='large-12 columns'>
-      <div class='reminder-container'>
-
-        <hr />
-
-        <div class='row'>
-         <a href="#" data-reveal-id="formModal" class="button radius">Set Reminder</a>
-          <div class='large-10 small-centered columns' id="med-row">
-            <div class='large-4 columns'><strong>Patient</strong></div>
-            <div class='large-4 columns'><strong>Medicine</strong></div>
-            <div class='large-4 columns'><strong>Days</strong></div>
-          </div>
-        </div>
-
-        <a href='#' data-reveal-id="reminderModal">
-          <div class='row'>
-            <div class='large-10 small-centered columns'>
-              <div class='large-4 columns even'><span>Gramps</span></div>
-              <div class='large-4 columns even'><span>Xyafroman</span></div>
-              <div class='large-4 columns even'><span>M / W / F</span></div>
-            </div>
-          </div>
-        </a>
-
-      </div>
-    </div>
+  <div class="row home-header-div panel" id="set-reminder">
+    <div class="large-2 columns" id="set-reminder-btn">   <a href="#" data-reveal-id="formModal" class="button radius">Set A Reminder</a></div>
+    <div class="large-10 columns" id="header-top"><h1>Your Scheduled Phone Call Reminders</h1></div>
   </div>
 
+  <div class='row main-section home-header-div'>
 
-  <a id='testing' href="#">TESTING</a>
+    <div class='large-12 columns'>
+      <div class='reminder-container '>
 
-  <script>
-    $(document).foundation();
-  </script>
+        <div class='row'>
+          <div class='large-12 small-centered columns ' >
+            <div class='large-3 columns'><h3> <i class="fa fa-user"></i> Person to Call</h3></div>
+            <div class='large-3 columns'><h3><i class="fa fa-plus-square"></i>Medication</h3></div>
+            <div class='large-3 columns'><h3><i class="fa fa-smile-o"></i>Message</h3></div>
+            <div class='large-3 columns'><h3><i class="fa fa-phone-square"></i>Edit or Delete</h3></div>
+
+          </div>
+        </div>
+      </div>
+
+    </div>
+
+     <hr/>
+
+<div id="account-reminders">
+</div>
+
+<script id="person-template" type="text/x-handlebars-template">
+  <div class='large-12 small-centered columns' id="med-row" data-event-id="{{eventId}}">
+    <div class='large-3 columns'><p>{{drug_name}}</p></div>
+    <div class='large-3 columns'><p>{{patient_name}}</p></div>
+    <div class='large-3 columns'><p>{{message}}</p></div>
+    <div class='large-3 columns delete-event'><a>Delete</a></div>
+    <hr/>
+  </div>
+</script>
+
+<a id='testing' href="#">TESTING</a>
+<script>
+$(document).foundation();
+</script>
+<script src="foundation-5.4.7/js/handlebars-v2.0.0.js"></script>
 </body>
 </html>
