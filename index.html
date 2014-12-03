@@ -7,7 +7,7 @@
   <title>Medmento Clientside</title>
   <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
-    <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 
   <link rel="stylesheet" href="foundation-5.4.7/css/foundation.css" />
   <link rel="stylesheet" href="foundation-5.4.7/css/foundation.min.css" />
@@ -76,7 +76,7 @@
             </div>
           </div>
 
-          <div class="row">
+<!--           <div class="row">
             <div class="large-12 columns left">
               <label>Frequency</label><br>
               <div class="large-2 columns left">Send every</div>
@@ -97,143 +97,176 @@
               </div>
               <div class="large-1 columns left">today.</div>
             </div>
-          </div>
-
-          <div class="row">
-            <div class="large-12 columns" >
-              <label>Message
-                <textarea name="message" placeholder="Add a custom message"></textarea>
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <input id="save-button" class="button right small radius" type='submit' value='Save'>
-              <input  class="button right small radius form-clear" value='Clear Form'>
-            </div>
-          </div>
-        </fieldset>
-      </form>
-    </div>
-    <a class="close-reveal-modal">&#215;</a>
-  </div>
-
-  <div id="reminderModal" class="reveal-modal" data-reveal>
-    <div class="row">
-      <h3 class="modal-header">Reminder Info</h3>
-      <form id="reminder-form">
-        <fieldset>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Patient Name
-                <input id='name' name='name' type="text" value="Grampa" />
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Patient Phone Number
-                <input id="patient-number" name="patient_number" type="tel" value="555-555-5555" />
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-4 columns">
-              <label>Time
-                <input type="time" name="" value="18:00:00" />
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Days to take medicine</label>
-              <input id="Sunday" type="checkbox"><label for="Sunday">Sunday</label>
-              <input id="Monday" type="checkbox" checked><label for="Monday">Monday</label>
-              <input id="Tuesday" type="checkbox"><label for="Tuesday">Tuesday</label>
-              <input id="Wednesday" type="checkbox" checked><label for="Wednesday">Wednesday</label>
-              <input id="Thursday" type="checkbox"><label for="Thursday">Thursday</label>
-              <input id="Friday" type="checkbox" checked><label for="Friday">Friday</label>
-              <input id="Saturday" type="checkbox"><label for="Saturday">Saturday</label>
-            </div>
-          </div>
+          </div> -->
 
           <div class="row">
             <div class="large-12 columns">
-              <label>Medication
-                <input type="text" name="drug_name" value="Xyafroman" />
-              </label>
+            <form id="test-day">
+               <input type="radio" name="frequency_period_id" value="4" id="daily"><span> Daily</span><br>
+               <input type="radio" name="frequency_period_id" value="5" id="weekly"><span> Weekly</span><br>
+            </form>
+             <input type="hidden" name="frequency_quantity" value='1'>
+             <input type="hidden" name="at" value="" id="at">
+
+             <div class="row">
+               <div class="large-3 columns">
+                At <input id="reminder-time" type="time"><br>
+              </div>
+
+              <div class="large-9 columns">
+                <div id='weekly-dropdown' name="">
+                  On
+                  <select id="day-of-week">
+                    <option value="Sunday">Sunday</option>
+                    <option value="Monday">Monday</option>
+                    <option value="Tuesday">Tuesday</option>
+                    <option value="Wednesday">Wednesday</option>
+                    <option value="Thursday">Thursday</option>
+                    <option value="Friday">Friday</option>
+                    <option value="Saturday">Saturday</option>
+                  </select>
+                </div>
+              </div>
             </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Message
-                <textarea name="message">Yo gramps, make sure to take your Xyafroman right now! Love, your grandson, Leroy.</textarea>
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <input id="save-button" class="button right" type='submit' value='Save'>
-              <input id="delete-button" class="button right" type='submit' value='Delete'>
-            </div>
-          </div>
-        </fieldset>
-      </form>
-    </div>
-    <a class="close-reveal-modal">&#215;</a>
-  </div>
-
-  <!-- main reminders page -->
-
-  <div class="row home-header-div panel" id="set-reminder">
-    <div class="large-2 columns" id="set-reminder-btn">   <a href="#" data-reveal-id="formModal" class="button radius">Set A Reminder</a></div>
-    <div class="large-10 columns" id="header-top"><h1>Your Scheduled Phone Call Reminders</h1></div>
-  </div>
-
-  <div class='row main-section home-header-div'>
-
-    <div class='large-12 columns'>
-      <div class='reminder-container '>
-
-        <div class='row'>
-          <div class='large-12 small-centered columns ' >
-            <div class='large-3 columns'><h3> <i class="fa fa-user"></i> Person to Call</h3></div>
-            <div class='large-3 columns'><h3><i class="fa fa-plus-square"></i>Medication</h3></div>
-            <div class='large-3 columns'><h3><i class="fa fa-smile-o"></i>Message</h3></div>
-            <div class='large-3 columns'><h3><i class="fa fa-phone-square"></i>Edit or Delete</h3></div>
-
           </div>
         </div>
-      </div>
 
-    </div>
-
-     <hr/>
-
-<div id="account-reminders">
+        <div class="row">
+          <div class="large-12 columns" >
+            <label>Message
+              <textarea name="message" placeholder="Add a custom message"></textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <input id="save-button" class="button right small radius" type='submit' value='Save'>
+            <input  id="clear-button-modal" class="button right small radius form-clear" value='Clear Form'>
+          </div>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+  <a class="close-reveal-modal">&#215;</a>
 </div>
 
-<script id="person-template" type="text/x-handlebars-template">
-  <div class='large-12 small-centered columns' id="med-row" data-event-id="{{eventId}}">
-    <div class='large-3 columns'><p>{{drug_name}}</p></div>
-    <div class='large-3 columns'><p>{{patient_name}}</p></div>
-    <div class='large-3 columns'><p>{{message}}</p></div>
-    <div class='large-3 columns delete-event'><a>Delete</a></div>
-    <hr/>
+<div id="reminderModal" class="reveal-modal" data-reveal>
+  <div class="row">
+    <h3 class="modal-header">Reminder Info</h3>
+    <form id="reminder-form">
+      <fieldset>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Patient Name
+              <input id='name' name='name' type="text" value="Grampa" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Patient Phone Number
+              <input id="patient-number" name="patient_number" type="tel" value="555-555-5555" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-4 columns">
+            <label>Time
+              <input type="time" name="" value="18:00:00" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Days to take medicine</label>
+            <input id="Sunday" type="checkbox"><label for="Sunday">Sunday</label>
+            <input id="Monday" type="checkbox" checked><label for="Monday">Monday</label>
+            <input id="Tuesday" type="checkbox"><label for="Tuesday">Tuesday</label>
+            <input id="Wednesday" type="checkbox" checked><label for="Wednesday">Wednesday</label>
+            <input id="Thursday" type="checkbox"><label for="Thursday">Thursday</label>
+            <input id="Friday" type="checkbox" checked><label for="Friday">Friday</label>
+            <input id="Saturday" type="checkbox"><label for="Saturday">Saturday</label>
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Medication
+              <input type="text" name="drug_name" value="Xyafroman" />
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Message
+              <textarea name="message">Yo gramps, make sure to take your Xyafroman right now! Love, your grandson, Leroy.</textarea>
+            </label>
+          </div>
+        </div>
+        <div class="row">
+          <div class="large-12 columns">
+            <input id="save-button" class="button right" type='submit' value='Save'>
+            <input id="delete-button" class="button right" type='submit' value='Delete'>
+          </div>
+        </div>
+      </fieldset>
+    </form>
   </div>
-</script>
+  <a class="close-reveal-modal">&#215;</a>
+</div>
 
-<a id='testing' href="#">TESTING</a>
-<script>
-$(document).foundation();
-$(".form-clear").on("click",function(){
-  $("form div").removeClass("error");
-  $("form label").removeClass("error");
-  $("form")[0].reset();
-});
+<!-- main reminders page -->
+
+<div class="row home-header-div panel" id="set-reminder">
+  <div class="large-2 columns" id="set-reminder-btn">   <a href="#" data-reveal-id="formModal" class="button radius">Set A Reminder</a></div>
+  <div class="large-10 columns" id="header-top"><h1>Your Scheduled Phone Call Reminders</h1></div>
+</div>
+
+<div class='row main-section home-header-div'>
+
+  <div class='large-12 columns' id="top-header-div">
+    <div class='reminder-container '>
+
+      <div class='row'>
+        <div class='large-12 small-centered columns header-text' >
+          <div class='large-3 columns'><h2><i class="fa fa-user"></i>  Person to Call</h2></div>
+          <div class='large-3 columns'><h2><i class="fa fa-plus-square"></i>  Medication</h2></div>
+          <div class='large-5 columns'><h2><i class="fa fa-phone-square"></i></i>  Message</h2></div>
+          <div class='large-1 columns edit-header' id="edit-header"><h2><i class="fa fa-pencil"></i>  Edit</h2></div>
+
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <hr/>
+
+  <div id="account-reminders">
+  </div>
+
+  <script id="person-template" type="text/x-handlebars-template">
+  <div class='large-12 small-centered columns' id="med-row" data-event-id="{{eventId}}">
+  <div class='large-3 columns' id="drug_name"><p>{{drug_name}}</p></div>
+  <div class='large-3 columns' id="patient_name"><p>{{patient_name}}</p></div>
+  <div class='large-5 columns' id="message"><p>{{message}}</p></div>
+  <div class='large-1 columns delete-event' id="delete"><a><p>Delete</p></a></div>
+
+  </div>
+    <hr/>
+  </script>
+
+  <a id='testing' href="#">TESTING</a>
+  <script>
+  $(document).foundation();
+  $(".form-clear").on("click",function(){
+    $("form div").removeClass("error");
+    $("form label").removeClass("error");
+    $("form")[0].reset();
+  });
 
 
-</script>
-<script src="foundation-5.4.7/js/handlebars-v2.0.0.js"></script>
+  </script>
+  <script src="foundation-5.4.7/js/handlebars-v2.0.0.js"></script>
 </body>
 </html>

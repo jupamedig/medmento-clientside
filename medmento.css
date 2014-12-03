@@ -4,7 +4,7 @@
 }
 
 .main-section {
-  border-radius: 5px;
+  padding-left: 4em;
 }
 
 a {
@@ -106,4 +106,48 @@ a {
 }
 
 
+#daily {
+  background-color: red;
+  padding: 0 4em;
+}
 
+#weekly  {
+  background-color: red;
+  padding: 0 .4em;
+}
+
+#clear-button-modal {
+  font-size: 19px;
+  margin-right: 3em;
+}
+
+#save-button {
+  font-size: 19px;
+  margin: 0 1em;
+}
+
+#formModal textarea {
+  height: 100px;
+}
+
+hr {
+  width:96%;
+}
+
+
+.large-3 p {
+  font-size: 29px;
+  word-wrap: break-word;
+}
+
+i {
+  color: #2cb4ac;
+}
+
+.reminder-container {
+  margin-right: 2.3em;
+}
+
+#message {
+  font-size: 20px;
+}
