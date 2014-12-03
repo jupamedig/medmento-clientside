@@ -12,11 +12,19 @@ function bindListeners() {
 function deleteEvent(evt) {
   evt.preventDefault();
   var id = $(this).closest('#med-row').data('event-id');
-  debugger
   $.ajax({
   type: 'DELETE',
   url: "http://medmento.herokuapp.com/api/v1/events/" + id
-  }).done(console.log("deleted")).fail(function(){alert("Item Not Found!")});
+  }).done(function(){
+
+      var itemToRemove = $('div').filter(function(i,e) {
+      return $(e).data('event-id') == id;
+    });
+
+
+    itemToRemove.remove();
+
+  }).fail(function(){alert("Item Not Found!")});
 }
 
 function loadEvents() {
