@@ -15,7 +15,7 @@ function deleteEvent(evt) {
   var id = $(this).closest('#med-row').data('event-id');
   $.ajax({
     type: 'DELETE',
-    url: "http://medmento.herokuapp.com/api/v1/events/" + id
+    url: "http://localhost:3000/api/v1/clockwork_events/" + id
   }).done(function(){
 
     var itemToRemove = $('div').filter(function(i,e) {
@@ -32,7 +32,7 @@ function deleteEvent(evt) {
 function loadEvents() {
   $.ajax({
     type: 'GET',
-    url: 'http://medmento.herokuapp.com/api/v1/events'
+    url: 'http://localhost:3000/api/v1/clockwork_events'
   }).done(function(serverData){
     for( i=0; i < serverData.length; i++ ) {
       var drug_name = serverData[i].drug_name;
@@ -66,7 +66,7 @@ function createReminder(evt) {
 
   var request = $.ajax({
     type: 'POST',
-    url: 'http://medmento.herokuapp.com/api/v1/events',
+    url: 'http://localhost:3000/api/v1/clockwork_events',
     dataType: 'json',
     data: $(this).serialize()
   });
@@ -86,7 +86,7 @@ function getReminders(evt) {
   evt.preventDefault();
   var request = $.ajax({
     type: 'get',
-    url: 'http://medmento.herokuapp.com/api/v1/events',
+    url: 'http://localhost:3000/api/v1/clockwork_events',
     dataType: 'json'
   });
   request.done(function(res) {
