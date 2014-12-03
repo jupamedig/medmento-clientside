@@ -62,7 +62,6 @@ function createReminder(evt) {
   } else {
     $("#at").val(day + " " + time)
   }
-  data = $(this).serialize()
 
   var request = $.ajax({
     type: 'POST',
@@ -106,14 +105,3 @@ function dropDown() {
    $('#weekly-dropdown').hide('slow');
  });
 }
-
-
-$(function() {
-  var $select = $(".1-31");
-  for (i=1;i<=31;i++){
-    $select.append($('<option></option>').val(i).html(i))
-  }
-});
-
-
-
