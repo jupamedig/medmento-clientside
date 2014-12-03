@@ -95,3 +95,13 @@ footer p {
 .panel h4 {
     font-family: 'Rosario', sans-serif;
 }
+
+#top-left-logo i {
+  margin: 0px 1px;
+
+  font-size: 0.83em;
+}
+
+.fa-clock-o {
+  padding-bottom: 2em;
+}

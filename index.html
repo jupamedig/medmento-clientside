@@ -8,6 +8,8 @@
   <link href='http://fonts.googleapis.com/css?family=Julius+Sans+One' rel='stylesheet' type='text/css'>
   <link href='http://fonts.googleapis.com/css?family=Rosario' rel='stylesheet' type='text/css'>
   <link href="http://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href='http://fonts.googleapis.com/css?family=Prociono' rel='stylesheet' type='text/css'>
+  <link href='http://fonts.googleapis.com/css?family=Karla' rel='stylesheet' type='text/css'>
 
   <link rel="stylesheet" href="foundation-5.4.7/css/foundation.css" />
   <link rel="stylesheet" href="foundation-5.4.7/css/foundation.min.css" />
@@ -45,10 +47,7 @@
     </section>
   </nav>
 
-
-
   <!-- form modals -->
-
   <div id="formModal" class="reveal-modal" data-reveal>
     <div class="row">
       <h3 class="modal-header">Set Reminder</h3>
@@ -76,28 +75,6 @@
             </div>
           </div>
 
-<!--           <div class="row">
-            <div class="large-12 columns left">
-              <label>Frequency</label><br>
-              <div class="large-2 columns left">Send every</div>
-              <div class="large-2 columns left">
-                <select class="1-31" name="frequency_quantity"></select>
-              </div>
-              <div class="large-2 columns left">
-                <select name="frequency_period_id">
-                  <option value="1">hours</option>
-                  <option value="2">days</option>
-                  <option value="3">weeks</option>
-                  <option value="4">months</option>
-                </select>
-              </div>
-              <div class="large-2 columns left">starting at</div>
-              <div class="large-3 columns left" >
-                <input type="time" name="at">
-              </div>
-              <div class="large-1 columns left">today.</div>
-            </div>
-          </div> -->
 
           <div class="row">
             <div class="large-12 columns">
@@ -248,10 +225,11 @@
 
   <script id="person-template" type="text/x-handlebars-template">
   <div class='large-12 small-centered columns' id="med-row" data-event-id="{{eventId}}">
-  <div class='large-3 columns' id="drug_name"><p>{{drug_name}}</p></div>
   <div class='large-3 columns' id="patient_name"><p>{{patient_name}}</p></div>
+  <div class='large-3 columns' id="drug_name"><p>{{drug_name}}</p></div>
   <div class='large-5 columns' id="message"><p>{{message}}</p></div>
-  <div class='large-1 columns delete-event' id="delete"><a><p>Delete</p></a></div>
+
+  <div class='large-1 columns delete-event' id="delete"><a><p><button  id="clear-button-modal" class="button right tiny radius form-clear">Delete</button></p></a></div>
     <hr/>
   </div>
   </script>

@@ -155,3 +155,26 @@ i {
 #delete p {
   font-size: .8em
 }
+
+
+#patient_name {
+  padding-left: 1.3em;
+}
+
+#drug_name {
+  padding-left: 1.3em;
+}
+
+#message {
+  padding-right: 4em
+}
+
+.button {
+  font-family: 'Karla', sans-serif;
+}
+
+.header-text h2 {
+  font-family: 'Karla', sans-serif;
+}
+
+
