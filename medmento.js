@@ -7,6 +7,7 @@ $(document).ready(function() {
 
 function bindListeners() {
   loadEvents();
+    $(document).on('click', "#data-button", dataGraph);
   $("#reminder-form").on('submit', createReminder);
   $("#testing").on('click', getReminders);
   $('#weekly').on('click', function(){
@@ -15,6 +16,14 @@ function bindListeners() {
   $('#daily').on('click', function(){
     $('#weekly-dropdown').hide('slow');
   });
+    $('#edit-weekly').on('click', function(){
+    $('#edit-weekly-dropdown').fadeIn('slow');
+  });
+  $('#edit-daily').on('click', function(){
+    $('#edit-weekly-dropdown').hide('slow');
+  });
+
+
   $(document).on('click', "#delete", deleteEvent);
   $(document).on('click', "#edit", editReminder);
 
@@ -22,29 +31,89 @@ function bindListeners() {
 
 };
 
+function dataGraph(evt) {
+  evt.preventDefault();
+
+  var id = $(this).closest('#med-row').data('event-id');
+  $.ajax({
+    type: 'GET',
+    // do not hardcode id
+    url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + 2 + "/pain_ratings/"
+  }).done(function(serverData){
+
+  // $.ajax({
+  // type: 'GET',
+  // url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + id
+  // }).done(function(serverData){
+  //       name = serverData.patient_name.charAt(0).toUpperCase() + serverData.patient_name.slice(1);
+  //      $("#chartModal h2 span").text(name)
+  // })
+  //   .fail(function(){console.log("Server Failure")})
+
+
+    var painRatings = [];
+    var xAxisDays = [];
+    for (var index=0; index < serverData.length; index++ ) {
+      painRatings.push(serverData[index].rating)
+      var day = serverData[index].updated_at.slice(8,10);
+      var month = serverData[index].updated_at.slice(5,7);
+      var year = serverData[index].updated_at.slice(0,4);
+      var date = month + "-" + day + "-" + year;
+      xAxisDays.push(date)
+    }
+
+    var sum = painRatings.reduce(function(a, b) { return a + b });
+    var avg = (sum / painRatings.length).toFixed(1);
+    $("#chartModal h5 span").text(avg)
+
+ var userData = {
+    labels : xAxisDays,
+    datasets : [
+      {
+        fillColor : "rgba(172,194,132,0.4)",
+        strokeColor : "#ACC26D",
+        pointColor : "#fff",
+        pointStrokeColor : "#9DB86D",
+        data : painRatings
+      }
+    ]
+  }
+
+
+  var userChart = document.getElementById('user-chart-modal').getContext('2d');
+userChart.canvas.width = 500;
+userChart.canvas.height = 500;
+
+  new Chart(userChart).Line(userData);
+
+
+  }).fail(function(){console.log("Server Error")})
+
+
+}
+
+
+
 function deleteEvent(evt) {
   evt.preventDefault();
   var id = $(this).closest('#med-row').data('event-id');
   $.ajax({
     type: 'DELETE',
-    url: "http://localhost:3000/api/v1/clockwork_events/" + id
+    url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + id
   }).done(function(){
 
     var itemToRemove = $('div').filter(function(i,e) {
       return $(e).data('event-id') == id;
     });
 
-
-
     itemToRemove.remove();
-
   }).fail(function(){alert("Item Not Found!")});
 }
 
 function loadEvents() {
   $.ajax({
     type: 'GET',
-    url: 'http://localhost:3000/api/v1/clockwork_events'
+    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events'
   }).done(function(serverData){
     for( i=0; i < serverData.length; i++ ) {
       var drug_name = serverData[i].drug_name;
@@ -79,7 +148,7 @@ function createReminder(evt) {
 
   var request = $.ajax({
     type: 'POST',
-    url: 'http://localhost:3000/api/v1/clockwork_events',
+    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events',
     dataType: 'json',
     data: $(this).serialize()
   });
@@ -99,7 +168,7 @@ function getReminders(evt) {
   evt.preventDefault();
   var request = $.ajax({
     type: 'get',
-    url: 'http://localhost:3000/api/v1/clockwork_events',
+    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events',
     dataType: 'json'
   });
   request.done(function(res) {
@@ -119,7 +188,7 @@ function editReminder(evt) {
   // var id = $(evt.target).parents().find('#med-row').attr('data-event-id')
   var request = $.ajax({
     type: 'get',
-    url: 'http://localhost:3000/api/v1/clockwork_events/' + id
+    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events/' + id
   });
   request.done(function(res) {
 
@@ -136,22 +205,11 @@ function editReminder(evt) {
       $('#edit-day-of-week').val(day);
       $('#edit-weekly-dropdown').show();
       $('#edit-reminder-time').val(time);
-      if ($('#edit-daily').is(':checked')){
-        $('#edit-weekly-dropdown').hide('slow');
-      }
-      else {
-        $('#edit-weekly-dropdown').fadeIn('slow');
-      }
+
     } else {
       $('#edit-weekly-dropdown').hide();
       $('#edit-daily').prop('checked', true);
       $('#edit-reminder-time').val(res.at);
-      if ($('#edit-weekly').is(':checked')){
-        $('#edit-weekly-dropdown').fadeIn('slow');
-      }
-      else {
-        $('#edit-weekly-dropdown').hide('slow');
-      }
     };
 
 
@@ -183,7 +241,7 @@ function updateReminder(evt) {
 
   var request = $.ajax({
     type: 'PUT',
-    url: 'http://localhost:3000/api/v1/clockwork_events/' + id,
+    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events/' + id,
     data: $(this).serialize()
   });
   request.done(function(res){

@@ -78,14 +78,14 @@
 
           <div class="row">
             <div class="large-12 columns">
-            <!-- <form id="test-day"> -->
-               <input type="radio" name="frequency_period_id" value="4" id="daily"><span> Daily</span><br>
-               <input type="radio" name="frequency_period_id" value="5" id="weekly"><span> Weekly</span><br>
-            <!-- </form> -->
-             <input type="hidden" name="frequency_quantity" value='1'>
-             <input type="hidden" name="at" value="" id="at">
+              <!-- <form id="test-day"> -->
+              <input type="radio" name="frequency_period_id" value="4" id="daily"><span> Daily</span><br>
+              <input type="radio" name="frequency_period_id" value="5" id="weekly"><span> Weekly</span><br>
+              <!-- </form> -->
+              <input type="hidden" name="frequency_quantity" value='1'>
+              <input type="hidden" name="at" value="" id="at">
 
-             <div class="row">
+              <div class="row">
                <div class="large-3 columns">
                 At <input id="reminder-time" type="time"><br>
               </div>
@@ -138,83 +138,83 @@
 
 
 <div id="editModal" class="reveal-modal" data-reveal>
-    <div class="row">
-      <h3 class="modal-header">Edit Reminder</h3>
-      <form id="edit-reminder-form">
-        <fieldset>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Patient Name
-                <input name='patient_name' id='patient_name' type="text" placeholder="Please enter the person's name to call" />
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Patient Phone Number
-                <input  name="patient_number" id="patient_number" type="tel" placeholder="###-###-####" />
-              </label>
-            </div>
-          </div>
-          <div class="row">
-            <div class="large-12 columns">
-              <label>Medication
-                <input  type="text" name="drug_name" id="drug_name" placeholder="Please enter the medication name" />
-              </label>
-            </div>
-          </div>
-
-
-          <div class="row">
-            <div class="large-12 columns">
-            <!-- <form id="test-day"> -->
-               <input type="radio" name="frequency_period_id" value="4" id="edit-daily"><span> Daily</span><br>
-               <input type="radio" name="frequency_period_id" value="5" id="edit-weekly"><span> Weekly</span><br>
-            <!-- </form> -->
-             <input type="hidden" name="frequency_quantity" value='1'>
-             <input type="hidden" name="at" value="" id="edit-at">
-
-             <div class="row">
-               <div class="large-3 columns">
-                At <input id="edit-reminder-time" type="time"><br>
-              </div>
-
-              <div class="large-9 columns">
-                <div id='edit-weekly-dropdown' name="">
-                  On
-                  <select id="edit-day-of-week">
-                    <option value="Sunday">Sunday</option>
-                    <option value="Monday">Monday</option>
-                    <option value="Tuesday">Tuesday</option>
-                    <option value="Wednesday">Wednesday</option>
-                    <option value="Thursday">Thursday</option>
-                    <option value="Friday">Friday</option>
-                    <option value="Saturday">Saturday</option>
-                  </select>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
+  <div class="row">
+    <h3 class="modal-header">Edit Reminder</h3>
+    <form id="edit-reminder-form">
+      <fieldset>
         <div class="row">
-          <div class="large-12 columns" >
-            <label>Message
-              <textarea name="message" id="message" placeholder="Add a custom message"></textarea>
+          <div class="large-12 columns">
+            <label>Patient Name
+              <input name='patient_name' id='patient_name' type="text" placeholder="Please enter the person's name to call" />
             </label>
           </div>
         </div>
         <div class="row">
           <div class="large-12 columns">
-            <input id="save-edit-button" class="button right small radius" type='submit' value='Save'>
-
-            <button  id="clear-button-modal" class="button right small radius form-clear">Clear Form</button>
+            <label>Patient Phone Number
+              <input  name="patient_number" id="patient_number" type="tel" placeholder="###-###-####" />
+            </label>
           </div>
         </div>
-      </fieldset>
-    </form>
-  </div>
-  <a class="close-reveal-modal">&#215;</a>
+        <div class="row">
+          <div class="large-12 columns">
+            <label>Medication
+              <input  type="text" name="drug_name" id="drug_name" placeholder="Please enter the medication name" />
+            </label>
+          </div>
+        </div>
+
+
+        <div class="row">
+          <div class="large-12 columns">
+            <!-- <form id="test-day"> -->
+            <input type="radio" name="frequency_period_id" value="4" id="edit-daily"><span> Daily</span><br>
+            <input type="radio" name="frequency_period_id" value="5" id="edit-weekly"><span> Weekly</span><br>
+            <!-- </form> -->
+            <input type="hidden" name="frequency_quantity" value='1'>
+            <input type="hidden" name="at" value="" id="edit-at">
+
+            <div class="row">
+             <div class="large-3 columns">
+              At <input id="edit-reminder-time" type="time"><br>
+            </div>
+
+            <div class="large-9 columns">
+              <div id='edit-weekly-dropdown' name="">
+                On
+                <select id="edit-day-of-week">
+                  <option value="Sunday">Sunday</option>
+                  <option value="Monday">Monday</option>
+                  <option value="Tuesday">Tuesday</option>
+                  <option value="Wednesday">Wednesday</option>
+                  <option value="Thursday">Thursday</option>
+                  <option value="Friday">Friday</option>
+                  <option value="Saturday">Saturday</option>
+                </select>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="large-12 columns" >
+          <label>Message
+            <textarea name="message" id="message" placeholder="Add a custom message"></textarea>
+          </label>
+        </div>
+      </div>
+      <div class="row">
+        <div class="large-12 columns">
+          <input id="save-edit-button" class="button right small radius" type='submit' value='Save'>
+
+          <button  id="clear-button-modal" class="button right small radius form-clear">Clear Form</button>
+        </div>
+      </div>
+    </fieldset>
+  </form>
+</div>
+<a class="close-reveal-modal">&#215;</a>
 </div>
 
 
@@ -256,15 +256,35 @@
   <div id="account-reminders">
   </div>
 
+
+
+<div id="chartModal" class="reveal-modal" data-reveal>
+  <h2>Pain Chart<span></span></h2>
+  <h5>Pain Average: <span></span> (Pain Scale 0-9)</h5>
+  <div class="pain-chart-div">
+    <canvas id="user-chart-modal" width="800" height="600"></canvas>
+    <a class="close-reveal-modal">&#215;</a>
+    <div><p>Date</p></div>
+  </div>
+
+</div>
+
+
+
+
+
   <script id="person-template" type="text/x-handlebars-template">
   <div class='large-12 small-centered columns' id="med-row" data-event-id="{{eventId}}">
   <div class='large-2 columns' id="patient_name"><p>{{patient_name}}</p></div>
-  <div class='large-3 columns' id="drug_name"><p>{{drug_name}}</p></div>
+  <div class='large-2 columns' id="drug_name"><p>{{drug_name}}</p></div>
   <div class='large-5 columns' id="message"><p>{{message}}</p></div>
+
+<div class='large-1 columns'><a data-reveal-id="chartModal"><p><button  id="data-button" class="button right tiny radius form-clear">Data</button></p></a></div>
+
 
   <div class='large-1 columns edit-event' id="edit"><a href="#" data-reveal-id="editModal"><p><button class="button right tiny radius form-clear">Edit</button></p></a></div>
   <div class='large-1 columns delete-event' id="delete"><a><p><button  class="button right tiny radius form-clear">Delete</button></p></a></div>
-    <hr/>
+  <hr/>
   </div>
   </script>
 
@@ -280,5 +300,7 @@
 
   </script>
   <script src="foundation-5.4.7/js/handlebars-v2.0.0.js"></script>
+  <script src="foundation-5.4.7/js/Chart.js"></script>
+
 </body>
 </html>
