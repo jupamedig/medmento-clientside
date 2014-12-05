@@ -156,25 +156,62 @@ i {
   font-size: .8em
 }
 
-
-#patient_name {
-  padding-left: 1.3em;
+#med-row P {
+  font-size: 1em;
 }
 
-#drug_name {
-  padding-left: 1.3em;
+#formModal h1  {
+  font-family: 'Julius Sans One', sans-serif;
+  color: black;
 }
 
-#message {
-  padding-right: 4em
+#formModal label {
+  font-size: 1.5em;
+    font-family: 'Rosario', sans-serif;
+  color: #2cb4ac;
+
 }
 
-.button {
-  font-family: 'Karla', sans-serif;
+#daily-text {
+  font-size: 1.1em;
+}
+#weekly-text{
+
+  font-size: 1.1em;
 }
 
-.header-text h2 {
-  font-family: 'Karla', sans-serif;
+#at {
+  font-size: 1.5em;
+    font-family: 'Rosario', sans-serif;
+  color: #2cb4ac;
 }
 
+#user-chart-modal {
+  padding-left: 5em;
+  text-align: center;
+}
 
+#chartModal h2 {
+  text-align: center;
+      font-family: 'Rosario', sans-serif;
+
+}
+
+#chartModal h5 {
+  text-align: center;
+}
+
+#on  {
+font-size: 1.5em;
+font-family: 'Rosario', sans-serif;
+color: #2cb4ac;
+}
+
+#pain-avg {
+ font-size: 1.5em;
+}
+
+#home-med i {
+  font-size: .85em;
+  color: white;
+}

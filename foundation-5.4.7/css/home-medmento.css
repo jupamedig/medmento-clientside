@@ -52,7 +52,8 @@ hr {
 
 #info-header {
  font-family: 'Rosario', sans-serif;
-  color: #2cb4ac;;
+  color: #2cb4ac;
+  font-size: 3.2em;
 }
 
 .large-4 i {
@@ -104,4 +105,28 @@ footer p {
 
 .fa-clock-o {
   padding-bottom: 2em;
+}
+
+#sign-in-modal {
+color: #2cb4ac;
+font-size: 1.3em;
+font-family: 'Rosario', sans-serif;
+background-color: white;
+}
+
+footer p {
+  color: #2cb4ac;
+}
+
+#myModal {
+  padding: 2em 21em;
+}
+
+#sign-in h2 {
+  text-align: center;
+   font-family: 'Julius Sans One', sans-serif;
+}
+
+#login-modal {
+  background-color: #2cb4ac;
 }

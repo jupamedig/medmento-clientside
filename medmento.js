@@ -38,17 +38,17 @@ function dataGraph(evt) {
   $.ajax({
     type: 'GET',
     // do not hardcode id
-    url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + 2 + "/pain_ratings/"
+    url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + id + "/pain_ratings/"
   }).done(function(serverData){
 
-  // $.ajax({
-  // type: 'GET',
-  // url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + id
-  // }).done(function(serverData){
-  //       name = serverData.patient_name.charAt(0).toUpperCase() + serverData.patient_name.slice(1);
-  //      $("#chartModal h2 span").text(name)
-  // })
-  //   .fail(function(){console.log("Server Failure")})
+  $.ajax({
+  type: 'GET',
+  url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + id
+  }).done(function(serverData){
+        name = serverData.patient_name.charAt(0).toUpperCase() + serverData.patient_name.slice(1);
+       $("#chartModal h2 span").text(name)
+  })
+    .fail(function(){console.log("Server Failure")})
 
 
     var painRatings = [];
@@ -79,14 +79,11 @@ function dataGraph(evt) {
     ]
   }
 
-
   var userChart = document.getElementById('user-chart-modal').getContext('2d');
-userChart.canvas.width = 500;
-userChart.canvas.height = 500;
+  userChart.canvas.width = 800;
+  userChart.canvas.height = 500;
 
   new Chart(userChart).Line(userData);
-
-
   }).fail(function(){console.log("Server Error")})
 
 

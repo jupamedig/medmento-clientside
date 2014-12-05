@@ -12,6 +12,30 @@
   <script src="foundation-5.4.7/js/vendor/modernizr.js"></script>
 </head>
 <body>
+
+  <div id="myModal" class="reveal-modal" data-reveal>
+   <form>
+         <div class="row">
+           <div class="large-12 columns" id="sign-in">
+               <h2>Welcome Back </h2>
+               <input type="text" name="username" placeholder="Username" />
+           </div>
+         </div>
+        <div class="row">
+           <div class="large-12 columns">
+               <input type="password" name="password" placeholder="Password" />
+           </div>
+        </div>
+        <div class="row">
+          <div class="large-12 large-centered columns">
+              <a href="index.html">
+                <input id="login-modal" class="button small radius expand" value="Log In"/>
+              </a>
+          </div>
+        </div>
+      </form>
+</div>
+
   <nav class="top-bar" data-topbar role="navigation">
     <ul class="title-area">
       <li class="name">
@@ -22,7 +46,8 @@
     <section class="top-bar-section">
       <ul class="right">
         <li><a id="top-right-nav" href="#">Get Started</a></li>
-        <li id="home-sign-in"><a id="top-right-nav" href="#">Sign In</a></li>
+
+                <li id="home-sign-in"><a id="top-right-nav" href="#"><a href="#" id="sign-in-modal" data-reveal-id="myModal">Sign In</a></a></li>
       </ul>
     </section>
   </nav>
@@ -108,7 +133,7 @@
 $(document).foundation({
   orbit: {
     animation: 'slide',
-    timer_speed: 2000,
+    timer_speed: 3000,
     pause_on_hover: true,
     animation_speed: 600,
     navigation_arrows: true,
