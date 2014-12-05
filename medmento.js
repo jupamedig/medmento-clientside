@@ -38,12 +38,12 @@ function dataGraph(evt) {
   $.ajax({
     type: 'GET',
     // do not hardcode id
-    url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + id + "/pain_ratings/"
+    url: "http://localhost:3000/api/v1/clockwork_events/" + id + "/pain_ratings/"
   }).done(function(serverData){
 
   $.ajax({
   type: 'GET',
-  url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + id
+  url: "http://localhost:3000/api/v1/clockwork_events/" + id
   }).done(function(serverData){
         name = serverData.patient_name.charAt(0).toUpperCase() + serverData.patient_name.slice(1);
        $("#chartModal h2 span").text(name)
@@ -96,7 +96,7 @@ function deleteEvent(evt) {
   var id = $(this).closest('#med-row').data('event-id');
   $.ajax({
     type: 'DELETE',
-    url: "http://medmento.herokuapp.com/api/v1/clockwork_events/" + id
+    url: "http://localhost:3000/api/v1/clockwork_events/" + id
   }).done(function(){
 
     var itemToRemove = $('div').filter(function(i,e) {
@@ -110,7 +110,7 @@ function deleteEvent(evt) {
 function loadEvents() {
   $.ajax({
     type: 'GET',
-    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events'
+    url: 'http://localhost:3000/api/v1/clockwork_events'
   }).done(function(serverData){
     for( i=0; i < serverData.length; i++ ) {
       var drug_name = serverData[i].drug_name;
@@ -145,7 +145,7 @@ function createReminder(evt) {
 
   var request = $.ajax({
     type: 'POST',
-    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events',
+    url: 'http://localhost:3000/api/v1/clockwork_events',
     dataType: 'json',
     data: $(this).serialize()
   });
@@ -162,10 +162,10 @@ function createReminder(evt) {
 };
 
 function getReminders(evt) {
-  evt.preventDefault();
+  // evt.preventDefault();
   var request = $.ajax({
     type: 'get',
-    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events',
+    url: 'http://localhost:3000/api/v1/clockwork_events',
     dataType: 'json'
   });
   request.done(function(res) {
@@ -185,7 +185,7 @@ function editReminder(evt) {
   // var id = $(evt.target).parents().find('#med-row').attr('data-event-id')
   var request = $.ajax({
     type: 'get',
-    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events/' + id
+    url: 'http://localhost:3000/api/v1/clockwork_events/' + id
   });
   request.done(function(res) {
 
@@ -238,7 +238,7 @@ function updateReminder(evt) {
 
   var request = $.ajax({
     type: 'PUT',
-    url: 'http://medmento.herokuapp.com/api/v1/clockwork_events/' + id,
+    url: 'http://localhost:3000/api/v1/clockwork_events/' + id,
     data: $(this).serialize()
   });
   request.done(function(res){
