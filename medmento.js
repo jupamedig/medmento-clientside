@@ -141,7 +141,11 @@ function createReminder(evt) {
     $("#at").val(day + " " + time)
   }
 
- $('#formModal').foundation('reveal','close');
+  // Parse phone number into "1234567890" format
+  var replacementText = $("input[id='patient_number']").val().replace(/\D/g,'')
+  $("input[id='patient_number']").val(replacementText)
+
+  $('#formModal').foundation('reveal','close');
 
   var request = $.ajax({
     type: 'POST',
